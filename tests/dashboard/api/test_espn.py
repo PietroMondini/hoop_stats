@@ -23,4 +23,4 @@ def test_get_standings(client):
 
 def test_get_teams(client):
     teams = client.get_teams()
-    assert len(teams["sports"][0]["leagues"][0]["teams"])
+    assert len(teams["sports"][0]["leagues"][0]["teams"]) == 30
