@@ -1,10 +1,10 @@
+from api.standings_repo import StandingsRepo
+from components.standings import render_standings
 import streamlit as st
 
-st.set_page_config(
-    page_title="NBA Dashboard",
-    page_icon=":basketball:",
-    layout="wide",
-)
+@st.cache_data(ttl=3600)
+def get_standings():
+    return StandingsRepo().get_standings()
 
-st.title("NBA Dashboard")
-st.write("Welcome to the NBA Dashboard!")
+st.title("NBA Explorer")
+render_standings(get_standings())
