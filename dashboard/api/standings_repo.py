@@ -21,8 +21,8 @@ class StandingsRepo:
     :ivar API: The external API client used to fetch standings data.
     :type API: ESPN
     """
-    def __init__(self):
-        self.API = _get_espn_api()
+    def __init__(self, api: ESPN = None):
+        self.API = api or _get_espn_api()
 
     def get_standings(self) -> pd.DataFrame:
         """
