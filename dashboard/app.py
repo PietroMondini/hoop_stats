@@ -1,4 +1,4 @@
-from api.standings_repo import StandingsRepo
+from repos.standings_repo import StandingsRepo
 from components.standings import render_standings
 import streamlit as st
 

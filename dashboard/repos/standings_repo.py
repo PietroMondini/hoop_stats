@@ -47,6 +47,7 @@ class StandingsRepo:
                 rows.append({
                     "conference": abbr,
                     "id": team["id"],
+                    "logo": f"https://a.espncdn.com/i/teamlogos/nba/500/{team['abbreviation'].lower()}.png",
                     "team": team["displayName"],
                     "abbr": team["abbreviation"],
                     "wins": int(stats["wins"]["value"]),

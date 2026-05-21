@@ -1,5 +1,5 @@
 import pytest, pandas as pd
-from dashboard.api.standings_repo import StandingsRepo
+from dashboard.repos.standings_repo import StandingsRepo
 
 MOCK_STANDINGS = {
     "uid": "s:40~l:46~g:7",
