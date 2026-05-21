@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-class ClientESPN:
+class ESPN:
     """
     A client for interacting with the ESPN API specific to NBA basketball.
 

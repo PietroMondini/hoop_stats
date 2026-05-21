@@ -1,9 +1,9 @@
 import pytest
-from dashboard.api.espn import ClientESPN
+from dashboard.api.espn import ESPN
 
 @pytest.fixture
 def client():
-    return ClientESPN()
+    return ESPN()
 
 def test_get_standings(client):
     standings = client.get_standings()
