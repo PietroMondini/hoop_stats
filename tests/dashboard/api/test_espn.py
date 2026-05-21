@@ -24,3 +24,12 @@ def test_get_standings(client):
 def test_get_teams(client):
     teams = client.get_teams()
     assert len(teams["sports"][0]["leagues"][0]["teams"]) == 30
+
+def test_get_roster(client):
+    roster = client.get_roster(1)
+    assert "athletes" in roster.keys()
+    assert len(roster["athletes"]) >= 10
+    for athlete in roster["athletes"]:
+        keys = athlete.keys()
+        for field in ["id", "fullName", "displayName", "position"]:
+            assert field in keys
