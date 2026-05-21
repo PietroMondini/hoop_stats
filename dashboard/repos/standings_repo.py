@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-from .espn import ESPN
+from dashboard.api.espn import ESPN
 
 @st.cache_resource
 def _get_espn_api():
