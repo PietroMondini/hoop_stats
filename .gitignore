@@ -2,4 +2,8 @@
 .venv
 .idea
 .python-version
+.egg-info
+.\egg-info
 /CLAUDE.md
+build
+/hoop_stats.egg-info/
