@@ -11,8 +11,16 @@ class ClientESPN:
 
     def __init__(self):
         self.BASE_URL = "https://site.api.espn.com/apis/v2/sports/basketball/nba"
+        self.BASE_SITE_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 
-    def get(self, endpoint: str) -> dict:
+    def get_standings(self) -> dict:
+        return self._get(self.BASE_URL, "standings")
+
+    def get_teams(self) -> dict:
+        return self._get(self.BASE_SITE_URL, "teams")
+
+    @staticmethod
+    def _get(base_url: str, endpoint: str) -> dict:
         """
         Retrieves data from the specified API endpoint using an HTTP GET request.
         The response is returned in JSON format.
@@ -21,6 +29,6 @@ class ClientESPN:
         :type endpoint: str
         :return: The response from the API encoded in JSON format.
         """
-        response = requests.get(f"{self.BASE_URL}/{endpoint}", timeout=30)
+        response = requests.get(f"{base_url}/{endpoint}", timeout=30)
         response.raise_for_status()
         return response.json()
